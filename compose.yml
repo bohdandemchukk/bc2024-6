@@ -1,0 +1,9 @@
+services:
+  lab6:
+    build: .
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    volumes:
+      - /c/users/user/desktop/web/lab6/clone/bc2024-6:/app:rw
+    command: ["npx", "nodemon", "--legacy-watch", "--inspect=0.0.0.0:9229", "main.js", "--host", "0.0.0.0", "--port", "3000", "--cache", "notes"]
